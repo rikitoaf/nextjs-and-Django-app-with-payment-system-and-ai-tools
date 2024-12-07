@@ -1,3 +1,7 @@
 django
 pillow
 django-cors-headers
+djangorestframework
+dj-rest-auth
+django-allauth
+djoser

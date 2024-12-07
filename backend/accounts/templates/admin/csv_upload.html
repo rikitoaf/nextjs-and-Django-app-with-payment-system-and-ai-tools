@@ -1,0 +1,20 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    <form action="." method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div style="margin-bottom: 20px;">
+            <h2>Upload Registration IDs</h2>
+            <p>Please upload a CSV file containing registration IDs. The file should have one column with registration IDs.</p>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <input type="file" name="csv_file" accept=".csv" required>
+        </div>
+        <div>
+            <input type="submit" value="Upload CSV" class="default" style="float: right;">
+        </div>
+    </form>
+</div>
+{% endblock %}
