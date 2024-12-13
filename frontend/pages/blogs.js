@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-
+import { fetchBlogs } from '../services/api';
 
 export default function Blogs() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/blog/posts/')
+    fetchBlogs()
       .then(response => {
-        setBlogs(response.data);
+        setBlogs(response.data.results);
       })
       .catch(error => {
         console.error('Error fetching blogs:', error);
@@ -24,6 +23,7 @@ export default function Blogs() {
           <div key={blog.id} className="p-4 border rounded shadow">
             <h2 className="text-xl font-semibold">{blog.title}</h2>
             <p>{blog.content.substring(0, 100)}...</p>
+            <p className="text-gray-500">Author: {blog.author}</p>
           </div>
         ))}
       </div>
