@@ -1,6 +1,8 @@
 import Head from 'next/head';
-import Link from 'next/link';
+
 import HomeCoverSection from '../components/HomeCoverSection';
+import Navbar from '../components/Navbar';
+import Footer from '@/components/Footer';
 
 
 export default function Home() {
@@ -12,34 +14,10 @@ export default function Home() {
       </Head>
 
       <div className="bg-gray-100 min-h-screen">
-        <header className="bg-purple-700 text-white py-4">
-          <div className="container mx-auto flex justify-between items-center">
-            <h1 className="text-2xl font-bold">Alumni Network</h1>
-            <nav>
-              <Link href="/" legacyBehavior>
-                <a className="px-3 hover:text-gray-200">Home</a>
-              </Link>
-              <Link href="/blogs" legacyBehavior>
-                <a className="px-3 hover:text-gray-200">Blogs</a>
-              </Link>
-              <Link href="/polls" legacyBehavior>
-                <a className="px-3 hover:text-gray-200">Polls</a>
-              </Link>
-              <Link href="/login" legacyBehavior>
-                <a className="px-3 hover:text-gray-200">Login</a>
-              </Link>
-              <Link href="/logout" legacyBehavior>
-                <a className="px-3 hover:text-gray-200">Logout</a>
-              </Link>
-               <Link href="/register" legacyBehavior>
-                <a className="px-3 hover:text-gray-200">Register</a>
-              </Link>
-            </nav>
-          </div>
-        </header>
-
+        <Navbar/>
+        <HomeCoverSection />
         <main className="container mx-auto py-8">
-          <HomeCoverSection />
+          
           <section className="text-center mb-12">
             <h2 className="text-4xl font-bold text-purple-800 mb-4">Welcome to the Alumni Network</h2>
             <p className="text-gray-700 text-lg">Connect with fellow alumni, share your experiences, and stay updated on events.</p>
@@ -68,9 +46,8 @@ export default function Home() {
           </section>
         </main>
 
-        <footer className="bg-purple-700 text-white py-4 text-center">
-          <p>&copy; 2024 Alumni Network</p>
-        </footer>
+       
+      <Footer/>
       </div>
     </>
   );

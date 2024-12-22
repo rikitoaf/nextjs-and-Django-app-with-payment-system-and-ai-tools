@@ -5,11 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      
         customPink: '#ec2b84',
         customPurple: '#7f58a4',
         
@@ -22,5 +22,3 @@ module.exports = {
   },
   plugins: [],
 };
-
-
